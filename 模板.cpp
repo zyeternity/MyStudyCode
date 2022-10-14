@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// struct main{
+//     int a;
+//     bool operator==(const main b) const  
+//     {  
+//         return this->a == b.a;  
+//     }  
+// };
+
 inline void readd(int &k) {
     int x = 0, w = 1;
     char ch = 0;
