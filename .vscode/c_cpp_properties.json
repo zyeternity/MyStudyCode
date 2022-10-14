@@ -1,7 +1,7 @@
 {
   "configurations": [
     {
-      "compilerPath": "D:\\cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1\\mingw64\\bin\\g++.exe",
+      "compilerPath": "D:\\MinGW\\bin\\g++.exe",
       "cppStandard": "gnu++14",
       "includePath": [
         "${workspaceFolder}/**"
