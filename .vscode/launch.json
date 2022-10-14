@@ -7,7 +7,7 @@
       "environment": [],
       "externalConsole": true,
       "internalConsoleOptions": "neverOpen",
-      "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe",
+      "miDebuggerPath": "F:\\MinGW\\bin\\gdb.exe",
       "name": "gcc single file debug",
       "preLaunchTask": "gcc single file build",
       "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",

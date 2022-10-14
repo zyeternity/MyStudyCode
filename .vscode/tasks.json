@@ -1,7 +1,7 @@
 {
   "options": {
     "env": {
-      "Path": "D:\\MinGW\\bin;${env:Path}"
+      "Path": "F:\\MinGW\\bin;${env:Path}"
     },
     "shell": {
       "args": [
@@ -22,7 +22,7 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
-      "command": "D:\\MinGW\\bin\\g++.exe",
+      "command": "F:\\MinGW\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
