@@ -12,8 +12,8 @@ bool can = false;
 
 int main() {
     std::ios::sync_with_stdio(false);
-    //freopen("string.in", "r", stdin);
-    //freopen("string.out", "w", stdout);
+    freopen("string.in", "r", stdin);
+    freopen("string.out", "w", stdout);
     cin >> t;
     while (t--) {
 

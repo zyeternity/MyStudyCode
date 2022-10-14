@@ -31,7 +31,7 @@ void dfs(string now) {
 int main() {
     std::ios::sync_with_stdio(false);
     freopen("string.in", "r", stdin);
-    freopen("string.out", "w", stdout);
+    freopen("1.ans", "w", stdout);
     cin >> t;
     while (t--) {
 
