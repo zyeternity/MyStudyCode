@@ -1,45 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// struct main{
-//     int a;
-//     bool operator==(const main b) const  
-//     {  
-//         return this->a == b.a;  
-//     }  
-// };
 
-inline void readd(int &k) {
-    int x = 0, w = 1;
-    char ch = 0;
-    while (ch < '0' || ch > '9') {
-        if (ch == '-')
-            w = -1;
-        ch = getchar();
-    }
-    while (ch >= '0' && ch <= '9') {
-        x  = x * 10 + (ch - '0');
-        ch = getchar();
-    }
-    k = x * w;
-    return;
-}
-
-inline void readlld(long long &k) {
-    long long x = 0, w = 1;
-    char ch = 0;
-    while (ch < '0' || ch > '9') {
-        if (ch == '-')
-            w = -1;
-        ch = getchar();
-    }
-    while (ch >= '0' && ch <= '9') {
-        x  = x * 10 + (ch - '0');
-        ch = getchar();
-    }
-    k = x * w;
-    return;
-}
 
 inline void write(int x) {
   static int sta[35];
@@ -52,12 +14,12 @@ inline void write(int x) {
 
 int main() {
     std::ios::sync_with_stdio(false);
-    // freopen("pair.in", "r", stdin);
-    // freopen("pair.out", "w", stdout);
+    freopen("pair.in", "r", stdin);
+    freopen("pair.out", "w", stdout);
 
-    write(1);
+    write(0);
 
-    // fclose(stdin);
-    // fclose(stdout);
+    fclose(stdin);
+    fclose(stdout);
     return 0;
 }
