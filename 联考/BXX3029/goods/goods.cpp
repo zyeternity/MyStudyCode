@@ -52,8 +52,8 @@ inline void write(int x) {
 
 int main() {
     std::ios::sync_with_stdio(false);
-    // freopen("main.in", "r", stdin);
-    // freopen("main.out", "w", stdout);
+    // freopen("goods.in", "r", stdin);
+    // freopen("goods.out", "w", stdout);
 
     int n;
     readd(n);

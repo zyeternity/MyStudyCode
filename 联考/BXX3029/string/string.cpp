@@ -1,13 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// struct main{
-//     int a;
-//     bool operator==(const main b) const
-//     {
-//         return this->a == b.a;
-//     }
-// };
 
 int t;
 string str[5000 + 10];
@@ -17,20 +10,20 @@ int n;
 bool can = false;
 
 void dfs(string now) {
-    if(now == to){
+    if (now == to) {
         can = true;
         return;
     }
-    for (int i = 0; i < n; i++)
-    {
-        if(to.length() - now.length() >= str[i].length()){
-            if(to[now.length()] == str[i][0]){
-                dfs(now+str[i]);
+    for (int i = 0; i < n; i++) {
+        if (to.length() - now.length() >= str[i].length()) {
+            if (to[now.length()] == str[i][0]) {
+                dfs(now + str[i]);
             }
-        }else{
+        } else {
             break;
         }
-        if(can)break;
+        if (can)
+            break;
     }
 
     return;
@@ -42,7 +35,6 @@ int main() {
     // freopen("string.out", "w", stdout);
     cin >> t;
     while (t--) {
-        
 
         cin >> n;
 
@@ -56,10 +48,10 @@ int main() {
         cin >> to;
         can = false;
         dfs("");
-        if(can){
-            cout<<"YES"<<endl;
-        }else {
-            cout<<"NO"<<endl;
+        if (can) {
+            cout << "YES" << endl;
+        } else {
+            cout << "NO" << endl;
         }
     }
 
