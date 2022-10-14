@@ -20,10 +20,9 @@ inline void readd(int &k) {
 
 int t;
 int n, k;
-int mins = 1e9, maxs = 0;
 int a[1000000+10];
-int a_max[1000000+10];
-int a_min[1000000+10];
+long long a_max[1000000+10];
+long long a_min[1000000+10];
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -36,15 +35,15 @@ int main() {
         readd(k);
         for (int i = 0; i < n; i++) {
             readd(a[i]);
-            a_max[i] = a[i] + k;
-            a_min[i] = a[i] - k;
+            a_max[i] = (long long)a[i] + k;
+            a_min[i] = (long long)a[i] - k;
         }
         bool flag = true;
         for (int i = 1; i < n; i++)
         {
             a_max[i] = min(a_max[i],a_max[i-1]+1);
             a_min[i] = max(a_min[i],a_min[i-1]+1);
-            if(a_max < a_min){
+            if(a_max[i] < a_min[i]){
                 flag = false;
                 break;
             }

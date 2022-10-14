@@ -1,60 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define ull unsigned long long
 
 int t;
-string str[5000 + 10];
+map<string,bool> chars_find;
 string to;
 int n;
 
 bool can = false;
 
-void dfs(string now) {
-    if (now == to) {
-        can = true;
-        return;
-    }
-    for (int i = 0; i < n; i++) {
-        if (to.length() - now.length() >= str[i].length()) {
-            if (to[now.length()] == str[i][0]) {
-                dfs(now + str[i]);
-            }
-        } else {
-            break;
-        }
-        if (can)
-            break;
-    }
-
-    return;
-}
 
 int main() {
     std::ios::sync_with_stdio(false);
-    freopen("string.in", "r", stdin);
-    freopen("string.out", "w", stdout);
+    //freopen("string.in", "r", stdin);
+    //freopen("string.out", "w", stdout);
     cin >> t;
     while (t--) {
 
         cin >> n;
-
-        for (int i = 0; i < n; i++) {
-            cin >> str[i];
+        chars_find.clear();
+        for(int i = 0;i<n;i++){
+            string temp;
+            cin>>temp;
+            chars_find[temp] = true;
         }
-
-        sort(str, str + n,
-             [&](string a, string b) { return a.length() < b.length(); });
-
-        //for(int i = 0;i<n;i++){
-        //    cout<<str[i]<<' ';
-        //}
-
-        cin >> to;
-        can = false;
-        dfs("");
-        if (can) {
-            cout << "YES" << endl;
-        } else {
-            cout << "NO" << endl;
+        cin>>to;
+        bool flag = true;
+        while(flag){
+            flag = false;
+            if(to.length() == 0){
+                break;
+            }
+            for(ull i = 1;i<=to.length();i++){
+                if(chars_find[to.substr(0,i)]){
+                    to = to.substr(i,to.length() - i);
+                    //cout<<"delete over "<<to<<endl;
+                    flag = true;
+                }
+            }
+        }
+        if(to.length() == 0){
+            cout<<"YES"<<endl;
+        }else{
+            cout<<"NO"<<endl;
         }
     }
 
