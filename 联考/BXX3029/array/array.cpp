@@ -21,6 +21,7 @@ inline void readd(int &k) {
 int t;
 int n, k;
 int mins = 1e9, maxs = 0;
+int a[1000000+10];
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -32,7 +33,7 @@ int main() {
         readd(n);
         readd(k);
         for (int i = 0, temp; i < n; i++) {
-            readd(temp);
+            readd(a[i]);
             maxs = max(maxs, temp);
             mins = min(mins, temp);
         }
