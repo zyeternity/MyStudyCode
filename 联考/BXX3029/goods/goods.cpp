@@ -55,7 +55,7 @@ int main() {
         }
         memset(dp, 0, sizeof(dp));
         for (int i = 1; i <= n; i++) {
-            for (int j = day_x; j >= (p[i] + (k * add_day)); j--) {
+            for (int j = day_x; j >= ((k * add_day) + p[i]); j--) {
                 dp[j] = max(dp[j], dp[j - p[i] - (k * add_day)] + 1);
             }
         }

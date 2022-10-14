@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 int t;
 string str[5000 + 10];
 string to;
@@ -31,8 +30,8 @@ void dfs(string now) {
 
 int main() {
     std::ios::sync_with_stdio(false);
-    // freopen("string.in", "r", stdin);
-    // freopen("string.out", "w", stdout);
+    freopen("string.in", "r", stdin);
+    freopen("string.out", "w", stdout);
     cin >> t;
     while (t--) {
 
@@ -45,6 +44,10 @@ int main() {
         sort(str, str + n,
              [&](string a, string b) { return a.length() < b.length(); });
 
+        //for(int i = 0;i<n;i++){
+        //    cout<<str[i]<<' ';
+        //}
+
         cin >> to;
         can = false;
         dfs("");
@@ -55,7 +58,7 @@ int main() {
         }
     }
 
-    // fclose(stdin);
-    // fclose(stdout);
+    fclose(stdin);
+    fclose(stdout);
     return 0;
 }

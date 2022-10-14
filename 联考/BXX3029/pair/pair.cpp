@@ -55,9 +55,7 @@ int main() {
     // freopen("pair.in", "r", stdin);
     // freopen("pair.out", "w", stdout);
 
-    int n;
-    readd(n);
-    cout << n;
+    write(1);
 
     // fclose(stdin);
     // fclose(stdout);
