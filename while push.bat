@@ -1,3 +1,4 @@
+@echo off
 :push
 push.bat
 timeout -t 10
