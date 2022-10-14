@@ -1,8 +1,0 @@
-inline void write(int x) {
-  static int sta[35];
-  int top = 0;
-  do {
-    sta[top++] = x % 10, x /= 10;
-  } while (x);
-  while (top) putchar(sta[--top] + 48);  // 48 是 '0'
-}
