@@ -1,7 +1,7 @@
 {
   "options": {
     "env": {
-      "Path": "F:\\MinGW\\bin;${env:Path}"
+      "Path": "D:\\cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1\\mingw64\\bin;${env:Path}"
     },
     "shell": {
       "args": [
@@ -22,7 +22,7 @@
         "-o",
         "${fileDirname}\\${fileBasenameNoExtension}.exe"
       ],
-      "command": "F:\\MinGW\\bin\\g++.exe",
+      "command": "D:\\cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1\\mingw64\\bin\\g++.exe",
       "group": {
         "isDefault": true,
         "kind": "build"
@@ -46,7 +46,7 @@
         "ByPass",
         "-NoProfile",
         "-File",
-        "D:\\MinGW\\bin\\pause-console.ps1",
+        "D:\\cpeditor-6.9.4-windows-x64-portable-with-gcc-11.2.0-LLVM-12.0.1\\mingw64\\bin\\pause-console.ps1",
         {
           "quoting": "weak",
           "value": "${fileDirname}\\${fileBasenameNoExtension}.exe"
