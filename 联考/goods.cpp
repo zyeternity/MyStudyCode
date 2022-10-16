@@ -1,15 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define int long long
 
-// struct main{
-//     int a;
-//     bool operator==(const main b) const
-//     {
-//         return this->a == b.a;
-//     }
-// };
-
-inline void readd(int &k) {
+inline int readd() {
     int x = 0, w = 1;
     char ch = 0;
     while (ch < '0' || ch > '9') {
@@ -21,8 +14,7 @@ inline void readd(int &k) {
         x  = x * 10 + (ch - '0');
         ch = getchar();
     }
-    k = x * w;
-    return;
+    return x * w;
 }
 
 inline void write(int x) {
@@ -35,28 +27,28 @@ inline void write(int x) {
         putchar(sta[--top] + 48);
 }
 int n, x, k;
-int p[1000000];
+vector<int> p;
 int ans     = 0;
 int add_day = 0;
-int main() {
+signed main() {
     std::ios::sync_with_stdio(false);
-    // freopen("goods.in", "r", stdin);
-    // freopen("goods.out", "w", stdout);
-    readd(n);
-    readd(x);
-    readd(k);
+    freopen("goods.in", "r", stdin);
+    freopen("goods.out", "w", stdout);
+    n = readd();
+    x = readd();
+    k = readd();
     for (int i = 0; i < n; i++) {
-        readd(p[i + 1]);
+        p.push_back(readd());
     }
 
-    sort(p + 1, p + n + 1, [&](int a, int b) { return a < b; });
+    sort(p.begin(), p.end());
 
     while (true) {
         int day_x = x;
-        if (p[1] + add_day * k > x) {
+        if (p[0] + add_day * k > x) {
             break;
         }
-        for (int i = 1; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             if (p[i] + add_day * k > day_x) {
                 break;
             }
@@ -68,7 +60,7 @@ int main() {
 
     write(ans);
 
-    // fclose(stdin);
-    // fclose(stdout);
+    fclose(stdin);
+    fclose(stdout);
     return 0;
 }
