@@ -1,54 +1,43 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// struct main{
-//     int a;
-//     bool operator==(const main b) const  
-//     {  
-//         return this->a == b.a;  
-//     }  
-// };
+struct ios_in {
+#define MAXN 100
+    inline char gc() {
+        static char buf[MAXN], *l, *r;
+        return (l == r) && (r = (l = buf) + fread(buf, 1, MAXN, stdin), l == r)
+                   ? EOF
+                   : *l++;
+    }
 
-inline void readd(int &k) {
-    int x = 0, w = 1;
-    char ch = 0;
-    while (ch < '0' || ch > '9') {
+    template <typename _Tp> inline ios_in &operator>>(_Tp &x) {
+        char ch = getchar(), sgn = 0;
+        x = 0;
+        while (ch ^ '-' && !isdigit(ch))
+            ch = getchar();
         if (ch == '-')
-            w = -1;
-        ch = getchar();
+            ch = getchar(), sgn = 1;
+        while (isdigit(ch))
+            x = x * 10 + ch - '0', ch = getchar();
+        if (sgn)
+            x = -x;
+        return *this;
     }
-    while (ch >= '0' && ch <= '9') {
-        x  = x * 10 + (ch - '0');
-        ch = getchar();
-    }
-    k = x * w;
-    return;
-}
+} Cin;
 
-inline void readlld(long long &k) {
-    long long x = 0, w = 1;
-    char ch = 0;
-    while (ch < '0' || ch > '9') {
-        if (ch == '-')
-            w = -1;
-        ch = getchar();
+struct ios_out {
+    template <typename _Tp> inline void operator<<(_Tp &x) {
+        char F[MAXN];
+        _Tp tmp = x > 0 ? x : (putchar('-'), -x);
+        int cnt = 0;
+        while (tmp) {
+            F[cnt++] = tmp % 10 + '0';
+            tmp /= 10;
+        }
+        while (cnt)
+            putchar(F[--cnt]);
     }
-    while (ch >= '0' && ch <= '9') {
-        x  = x * 10 + (ch - '0');
-        ch = getchar();
-    }
-    k = x * w;
-    return;
-}
-
-inline void write(int x) {
-  static int sta[35];
-  int top = 0;
-  do {
-    sta[top++] = x % 10, x /= 10;
-  } while (x);
-  while (top) putchar(sta[--top] + 48);
-}
+} Cout;
 
 int main() {
     std::ios::sync_with_stdio(false);
@@ -56,8 +45,8 @@ int main() {
     // freopen("main.out", "w", stdout);
 
     int n;
-    readd(n);
-    cout << n;
+    Cin >> n;
+    Cout << n;
 
     // fclose(stdin);
     // fclose(stdout);
