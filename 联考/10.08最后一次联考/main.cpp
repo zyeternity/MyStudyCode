@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-namespace IO{
-    #define MAXN 100
+namespace IO_ios {
+#define MAXN 100
 struct ios_in {
     template <typename _Tp> inline ios_in &operator>>(_Tp &x) {
         char ch = getchar(), sgn = 0;
@@ -32,18 +32,18 @@ struct ios_out {
             putchar(F[--cnt]);
     }
 } Cout;
-}
+} // namespace IO_ios
 
-
+using namespace IO_ios;
 
 int main() {
-    std::ios::sync_with_stdio(false);
+    // std::ios::sync_with_stdio(false);
     // freopen("main.in", "r", stdin);
     // freopen("main.out", "w", stdout);
 
-    int n;
-    IO::Cin >> n;
-    IO::Cout << n;
+    // int n;
+    // Cin >> n;
+    // Cout << n;
 
     // fclose(stdin);
     // fclose(stdout);
