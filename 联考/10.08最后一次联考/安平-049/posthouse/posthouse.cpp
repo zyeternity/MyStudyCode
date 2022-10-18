@@ -100,6 +100,7 @@ int main() {
     for (int i = 0; i < k; i++) {
         Cin >> x[i];
         is_have[x[i]] = true;
+        after         = x[i];
         if (i != 0)
             mins = min(mins, x[i] - x[i - 1]);
         unknown_sf::p_q.push({before, after, abs(after - before)});
@@ -111,7 +112,7 @@ int main() {
     printf("\n");
     sort(x, x + k, [&](int a, int b) { return a < b; });
     int del;
-    if (/*2 * k * m < 1e8*/false) {
+    if (2 * k * m < 1e8) {
         // 暴力出奇迹
         while (m--) {
             Cin >> del;
