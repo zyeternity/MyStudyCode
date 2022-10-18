@@ -44,13 +44,13 @@ namespace IO_ios
 
 using namespace IO_ios;
 
-#define max_n 20000
+#define max_n 2100
 #define mod_t 1000000007
 
 int n, m, k;
 map<int, bool> cant[max_n];
 int now_time[max_n];
-vector<int> t_have[20000];
+vector<int> t_have[2100];
 
 long long ans = 0;
 //           去判断第几个
