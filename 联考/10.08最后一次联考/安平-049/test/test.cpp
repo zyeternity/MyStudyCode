@@ -36,19 +36,59 @@ struct ios_out {
 
 using namespace IO_ios;
 
+#define max_n 100000
+#define mod_t 1000000007
+
+int n, m, k;
+map<int,bool> cant[max_n];
+int now_time[max_n];
+vector<int> t_have[10000000];
+
+long long ans = 0;
+//           去判断第几个
+void dfs(int now){
+    if(now==n){
+        ans = (ans+1)%mod_t;
+        return;
+    }
+    for(int i=1;i<=k;i++){// 枚举可选时间点
+
+        bool canuse = true;
+
+        for(int j=0;j<t_have[i].size();j++){
+            if(cant[t_have[i][j]][now]){
+                canuse = false;
+                break;
+            }
+        }
+        if(!canuse)continue;
+        
+        t_have[i].push_back(now);
+        dfs(now + 1);
+        t_have[i].pop_back();
+    }
+}
+
 int main() {
 
-    // freopen("test.in","r",stdin);
-    // freopen("test.out","w",stdout);
+    freopen("test.in","r",stdin);
+    freopen("test.out","w",stdout);
 
-    // int n;
-    // Cin >> n;
-    // Cout << n;
+    Cin >> n >> m >> k;
 
+    while (m--) {
+        int x,y;
+        Cin >> x >> y;
+        cant[x][y] = true;
+        cant[y][x] = true;
+    }
     
+    dfs(0);
 
-    // fclose(stdin);
-    // fclose(stdout);
+    Cout << ans ;
+    printf("\n");
+    fclose(stdin);
+    fclose(stdout);
 
     return 0;
 }

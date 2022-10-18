@@ -114,8 +114,8 @@ long long now = 0;
 
 int main() {
 
-    // freopen("calc.in","r",stdin);
-    // freopen("calc.out","w",stdout);
+    freopen("calc.in","r",stdin);
+    freopen("calc.out","w",stdout);
 
     Cin >> now;
 
@@ -128,14 +128,14 @@ int main() {
             now--;
             ans++;
         }
-        if(now == 0){
+        if (now == 0) {
             break;
         }
     }
     Cout << ans;
     printf("\n");
-    // fclose(stdin);
-    // fclose(stdout);
+    fclose(stdin);
+    fclose(stdout);
 
     return 0;
 }
