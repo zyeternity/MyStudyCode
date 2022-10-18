@@ -37,15 +37,18 @@ struct ios_out {
 using namespace IO_ios;
 
 int main() {
-    // std::ios::sync_with_stdio(false);
-    // freopen("main.in", "r", stdin);
-    // freopen("main.out", "w", stdout);
+
+    // freopen("posthouse.in","r",stdin);
+    // freopen("posthouse.out","w",stdout);
 
     // int n;
     // Cin >> n;
     // Cout << n;
 
+    
+
     // fclose(stdin);
     // fclose(stdout);
+
     return 0;
 }
