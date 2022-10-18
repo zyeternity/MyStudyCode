@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//AK IOI
+
 namespace IO_ios {
 #define MAXN 100
 struct ios_in {
@@ -36,16 +38,50 @@ struct ios_out {
 
 using namespace IO_ios;
 
+int n, k, m;
+int x[400000 + 10];
+bool is_have[10000000 + 10];
+int cut;
+int pass[10000000];
+int mins = 1e9;
 int main() {
 
     // freopen("posthouse.in","r",stdin);
     // freopen("posthouse.out","w",stdout);
 
-    // int n;
-    // Cin >> n;
-    // Cout << n;
-
-    
+    Cin >> n >> k >> m;
+    for (int i = 0; i < k; i++) {
+        Cin >> x[i];
+        is_have[x[i]] = true;
+        if (i != 0)
+            mins = min(mins, x[i] - x[i - 1]);
+    }
+    Cout << mins;
+    printf("\n");
+    sort(x, x + k, [&](int a, int b) { return a < b; });
+    int del;
+    if (2 * k * m < 1e8) {
+        // 暴力出奇迹
+        while (m--) {
+            Cin >> del;
+            is_have[del] = false;
+            mins = 1e9;
+            for (int i = 0; i < k - 1; i++) {
+                if (is_have[x[i]] == false)
+                    continue;
+                for (int j = i + 1; j < k; j++) {
+                    if (is_have[x[j]] == false)
+                        continue;
+                    mins = min(mins,x[j] - x[i]);
+                    break;
+                }
+            }
+            Cout << mins;
+            printf("\n");
+        }
+    } else {
+        // 来自我写的不知名的算法
+    }
 
     // fclose(stdin);
     // fclose(stdout);
