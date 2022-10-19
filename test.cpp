@@ -1,30 +1,31 @@
-// //vector 的内存管理
-// #include <bits/stdc++.h>
-// #include <conio.h>
-// using namespace std;
-// int main(){
-//     vector<int>a;
-//     cout<<sizeof(a)<<' ';
-//     _getch();
-//     for(int i = 0;i<100000000;i++)a.push_back(i);//存入数据
-//     cout<<sizeof(a)<<' ';
-//     _getch();
-//     a.clear();//不清理内存
-//     cout<<sizeof(a)<<' ';
-//     _getch();
-//     a.shrink_to_fit();//清理内存
-//     cout<<sizeof(a);
-//     _getch();
-//     return 0;
-// }
 #include <bits/stdc++.h>
 using namespace std;
-int main(){
-    string str = "abcde";
-    string temp;
-    //删除i
-    int i = 1;
-    temp.append(str,0,i);
-    temp.append(str,i+1,str.length()-1-i);
-    cout<<temp;
+
+int main() {
+
+    // freopen("test.in","r",stdin);
+    // freopen("test.out","w",stdout);
+
+    // int n;
+    // Cin >> n;
+    // Cout << n;
+    // 现存可用的元素
+    set<int> available;
+    // 需要大于等于的值
+    available.insert(1);
+    available.insert(2);
+    available.insert(3);
+    // 查找最小的大于等于x的元素
+    set<int>::iterator it = available.begin();
+    if (it != available.end()){
+        // 找到了这样的元素，将其从现存可用元素中移除
+        cout << *it << endl;
+        available.erase(it);
+        // 进行相应操作……
+    }
+
+    // fclose(stdin);
+    // fclose(stdout);
+
+    return 0;
 }
