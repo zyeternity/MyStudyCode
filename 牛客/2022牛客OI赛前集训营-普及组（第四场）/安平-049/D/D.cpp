@@ -45,8 +45,6 @@ int main() {
     // Cin >> n;
     // Cout << n;
 
-    
-
     // fclose(stdin);
     // fclose(stdout);
 
