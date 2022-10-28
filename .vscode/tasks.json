@@ -13,8 +13,7 @@
   "tasks": [
     {
       "args": [
-        "-std=gnu++14",
-        "-O2",
+        "-std=gnu++23",
         "-Wall",
         "-fexec-charset=GBK",
         "-g",
